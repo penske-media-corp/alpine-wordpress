@@ -16,7 +16,7 @@ RUN apk add --update --no-cache libxml2-dev git \
 USER www-data
 
 FROM "nginx:${NGINX_VERSION}-alpine" AS server
-ADD https://raw.githubusercontent.com/penske-media-corp/alpine-wordpress/master/nginx.conf:/etc/nginx/nginx.conf
+ADD https://raw.githubusercontent.com/penske-media-corp/alpine-wordpress/master/nginx.conf /etc/nginx/nginx.conf
 
 FROM wp AS test-php
 RUN apk add --update --no-cache jq git $PHPIZE_DEPS \
