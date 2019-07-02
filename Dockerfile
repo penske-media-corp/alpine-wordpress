@@ -15,6 +15,9 @@ RUN apk add --update --no-cache libxml2-dev git \
 && docker-php-ext-install soap
 USER www-data
 
+FROM "nginx:${NGINX_VERSION}-alpine" AS server
+COPY ./.nginx.conf:/etc/nginx/nginx.conf
+
 FROM wp AS test-php
 RUN apk add --update --no-cache jq git $PHPIZE_DEPS \
 && pecl install -f xdebug \
