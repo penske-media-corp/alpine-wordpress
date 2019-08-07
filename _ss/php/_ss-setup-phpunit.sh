@@ -20,7 +20,7 @@ sed -i "s/youremptytestdbnamehere/$WORDPRESS_DB_NAME/" $wp_tests_config
 sed -i "s/yourpasswordhere/$WORDPRESS_DB_PASSWORD/" $wp_tests_config
 sed -i "s/yourusernamehere/$WORDPRESS_DB_USER/" $wp_tests_config
 sed -i "s|localhost|${WORDPRESS_TEST_DB_HOST}|" $wp_tests_config
-sed -i "s|$table_prefix = 'wptests_';   // Only numbers, letters, and underscores please!|(getenv('UNIQUE_TEST_TOKEN') !== false) ? \$table_prefix = 'wptests_'. getenv( 'UNIQUE_TEST_TOKEN' ) : \$table_prefix = 'wptests_';|" $wp_tests_config
+sed -i "s|\$table_prefix = 'wptests_';   // Only numbers, letters, and underscores please!|(getenv('UNIQUE_TEST_TOKEN') !== false) ? \$table_prefix = 'wptests_'. getenv( 'UNIQUE_TEST_TOKEN' ) : \$table_prefix = 'wptests_';|" $wp_tests_config
 echo "define( 'AUTH_COOKIE', false );" >> $wp_tests_config
 echo "define( 'FILES_ACCESS_TOKEN', '123');" >> $wp_tests_config
 echo "define( 'FILES_CLIENT_SITE_ID', '123' );" >> $wp_tests_config
