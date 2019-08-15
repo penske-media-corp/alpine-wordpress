@@ -5,9 +5,6 @@ case "$1" in
 		ln -svf ${WEB_ROOT}/wp-content/mu-plugins/vip-wpcom-mu-plugins/* ${WEB_ROOT}/wp-content/mu-plugins
 		ln -svf ${WEB_ROOT}/wp-content/plugins/wordpress-vip-plugins/* ${WEB_ROOT}/wp-content/plugins
 		ln -svf ${WEB_ROOT}/wp-content/plugins ${WEB_ROOT}/wp-content/themes/vip
-		if [ 'pmc-plugins' == "${WORDPRESS_THEME}" ]
-			then ln -svf ${WEB_ROOT}/wp-content/plugins/pmc-plugins ${WEB_ROOT}/wp-content/themes/vip
-		fi
 	;;
 	vipgo)
 		ln -svf ${WEB_ROOT}/wp-content/plugins/pmc-vip-go-plugins/* ${WEB_ROOT}/wp-content/plugins
