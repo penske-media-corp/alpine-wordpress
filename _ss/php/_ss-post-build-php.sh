@@ -1,5 +1,5 @@
 #!/bin/sh
-case "$1" in
+case "${1}" in
 	wpcom)
 		git -C  ./vendor/pmc/mu-plugins/vip-wpcom-mu-plugins submodule update --init --recursive
 		ln -svf ./vendor/pmc/mu-plugins/vip-wpcom-mu-plugins/* ./vendor/pmc/mu-plugins
