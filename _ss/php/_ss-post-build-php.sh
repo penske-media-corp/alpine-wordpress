@@ -4,7 +4,6 @@ case "${1}" in
 		git -C  ./vendor/pmc/mu-plugins/vip-wpcom-mu-plugins submodule update --init --recursive
 		ln -svf ./vendor/pmc/mu-plugins/vip-wpcom-mu-plugins/* ./vendor/pmc/mu-plugins
 		ln -svf ./vendor/pmc/plugins/wordpress-vip-plugins/* ./vendor/pmc/plugins
-		ln -svf ./vendor/pmc/plugins ./vendor/pmc/themes/vip
 	;;
 	vipgo)
 		ln -svfr ./vendor/pmc/mu-plugins/vip-go-mu-plugins-built/* ./vendor/pmc/mu-plugins/
