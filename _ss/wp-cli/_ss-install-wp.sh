@@ -14,7 +14,7 @@ wp --allow-root core install \
 if [ 'vipgo' = $VIP_GO_ENV ]
 	then wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-go-mu-plugins-built"
 elif [ 'wpcom' = $VIP_GO_ENV ]
-	wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-wpcom-mu-plugins"
+	then wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-wpcom-mu-plugins"
 fi
 
 # Activate theme
