@@ -10,7 +10,12 @@ wp --allow-root core install \
 	--quiet
 
 # Set the mu-plugin dir for backwards compatability with WPCOM|VIPGO
-wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-go-mu-plugins-built"
+# @NOTE: This is a misuse of the VIP_GO_ENV variable as that's supposed to define as such (production|local|stage|preprod|etc.)
+if [ 'vipgo' = $VIP_GO_ENV ]
+	then wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-go-mu-plugins-built"
+elif [ 'wpcom' = $VIP_GO_ENV ]
+	wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-wpcom-mu-plugins"
+fi
 
 # Activate theme
 wp --allow-root --url=$WORDPRESS_DOMAIN theme activate $WORDPRESS_THEME
