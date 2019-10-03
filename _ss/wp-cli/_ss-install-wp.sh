@@ -9,5 +9,8 @@ wp --allow-root core install \
 	--url="${WORDPRESS_DOMAIN}" \
 	--quiet
 
+# Set the mu-plugin dir for backwards compatability with WPCOM|VIPGO
+wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-go-mu-plugins-built"
+
 # Activate theme
 wp --allow-root --url=$WORDPRESS_DOMAIN theme activate $WORDPRESS_THEME
