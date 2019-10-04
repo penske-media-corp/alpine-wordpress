@@ -13,8 +13,10 @@ wp --allow-root core install \
 # @NOTE: This is a misuse of the VIP_GO_ENV variable as that's supposed to define as such (production|local|stage|preprod|etc.)
 if [ 'vipgo' = $VIP_GO_ENV ]
 	then wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-go-mu-plugins-built"
+	wp config set WP_PLUGIN_DIR "${WEB_ROOT}/wp-content/plugins/pmc-vip-go-plugins"
 elif [ 'wpcom' = $VIP_GO_ENV ]
 	then wp config set WPMU_PLUGIN_DIR "${WEB_ROOT}/wp-content/mu-plugins/vip-wpcom-mu-plugins"
+	wp config set WP_PLUGIN_DIR "${WEB_ROOT}/wp-content/plugins/wordpress-vip-plugins"
 fi
 
 # Activate theme
